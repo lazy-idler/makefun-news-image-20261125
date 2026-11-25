@@ -1,0 +1,11 @@
+node_modules/
+out/
+tmp/
+*.tmp
+*.log
+*keypair*.json
+wallet.json
+*-bundle.tar.gz
+*_status.json
+__pycache__/
+preview_*.png
