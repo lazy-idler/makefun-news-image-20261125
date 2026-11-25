@@ -7,7 +7,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parent.parent
 ASSET_OUT = ROOT / "assets" / "entry.png"
 SCRATCH_DIR = Path(r"C:\Users\82103\.gemini\antigravity\brain\c8bbd2ac-e3a5-415b-8afb-bf347f8e20ad\scratch")
-PREVIEW_300 = SCRATCH_DIR / "preview_300_v5.png"
+PREVIEW_300 = SCRATCH_DIR / "preview_300_v6.png"
 
 
 def proj(lon: float, lat: float) -> tuple[float, float]:
@@ -403,13 +403,14 @@ HTML_TEMPLATE = """<!doctype html>
               <circle cx="48" cy="14" r="1.2" fill="#FFF" opacity="0.7"/>
               <circle cx="155" cy="18" r="1.5" fill="#FFF" opacity="0.8"/>
               <ellipse cx="92" cy="166" rx="130" ry="32" fill="#1D4ED8" stroke="#60A5FA" stroke-width="2"/>
-              <g transform="translate(115,24)">
+              <g transform="translate(115,25)">
                 <rect x="-26" y="6" width="52" height="7" rx="2" fill="#E2E8F0"/>
                 <rect x="-4" y="-12" width="8" height="34" rx="2" fill="#CBD5E1"/>
                 <rect x="-32" y="-8" width="20" height="10" fill="#3B82F6" stroke="#93C5FD" stroke-width="1"/>
                 <rect x="12" y="-8" width="20" height="10" fill="#3B82F6" stroke="#93C5FD" stroke-width="1"/>
                 <rect x="-32" y="16" width="20" height="10" fill="#3B82F6" stroke="#93C5FD" stroke-width="1"/>
                 <rect x="12" y="16" width="20" height="10" fill="#3B82F6" stroke="#93C5FD" stroke-width="1"/>
+                <text x="0" y="38" text-anchor="middle" fill="#93C5FD" font-size="8.5" font-weight="900">TIANGONG</text>
               </g>
               <g transform="translate(50,76) rotate(-25)">
                 <path d="M-9,26 L0,54 L9,26 Z" fill="#F97316"/>
@@ -457,6 +458,19 @@ HTML_TEMPLATE = """<!doctype html>
               <polygon points="164,122 148,120 158,108" fill="#DC2626"/>
               <rect x="14" y="10" width="110" height="25" rx="5" fill="#991B1B"/>
               <text x="69" y="28" text-anchor="middle" fill="#FFF" font-size="14" font-weight="900">KOSPI -6.2%</text>
+              <!-- AI Chip icon top-right -->
+              <g transform="translate(136,10)">
+                <rect x="4" y="4" width="24" height="24" rx="3" fill="#1E293B" stroke="#DC2626" stroke-width="1.5"/>
+                <text x="16" y="19" text-anchor="middle" fill="#FECACA" font-size="9" font-weight="900">AI</text>
+                <line x1="10" y1="0" x2="10" y2="4" stroke="#64748B" stroke-width="2"/>
+                <line x1="22" y1="0" x2="22" y2="4" stroke="#64748B" stroke-width="2"/>
+                <line x1="10" y1="28" x2="10" y2="32" stroke="#64748B" stroke-width="2"/>
+                <line x1="22" y1="28" x2="22" y2="32" stroke="#64748B" stroke-width="2"/>
+                <line x1="0" y1="10" x2="4" y2="10" stroke="#64748B" stroke-width="2"/>
+                <line x1="0" y1="22" x2="4" y2="22" stroke="#64748B" stroke-width="2"/>
+                <line x1="28" y1="10" x2="32" y2="10" stroke="#64748B" stroke-width="2"/>
+                <line x1="28" y1="22" x2="32" y2="22" stroke="#64748B" stroke-width="2"/>
+              </g>
               <rect x="14" y="122" width="142" height="21" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.3"/>
               <text x="85" y="137" text-anchor="middle" fill="#991B1B" font-size="11" font-weight="900">SIDECAR TRIGGERED</text>
             </svg>
@@ -491,13 +505,18 @@ HTML_TEMPLATE = """<!doctype html>
               <polygon points="0,104 60,92 94,104 106,74 122,88 140,134 184,150 0,150" fill="#E7D8B9" stroke="#78716C" stroke-width="1"/>
               <text x="12" y="21" fill="#44403C" font-size="11" font-weight="900">IRAN</text>
               <text x="10" y="142" fill="#44403C" font-size="10.5" font-weight="900">SAUDI / UAE</text>
+              <text x="142" y="54" text-anchor="middle" fill="#BAE6FD" font-size="8.5" font-weight="800" font-style="italic">HORMUZ</text>
               <g transform="translate(86,60)">
+                <circle cx="8" cy="-18" r="5" fill="#64748B" opacity="0.65"/>
+                <circle cx="13" cy="-24" r="6" fill="#94A3B8" opacity="0.5"/>
                 <polygon points="-21,6 21,6 26,0 -19,0" fill="#0F172A"/>
                 <rect x="-13" y="-6" width="8" height="6" fill="#F8FAFC"/>
                 <path d="M1,0 Q8,-15 15,0 Q10,-21 1,-14 Z" fill="#F97316"/>
                 <path d="M4,0 Q9,-9 13,0 Z" fill="#FDE047"/>
               </g>
               <g transform="translate(142,76)">
+                <circle cx="7" cy="-16" r="4.5" fill="#64748B" opacity="0.65"/>
+                <circle cx="11" cy="-22" r="5.5" fill="#94A3B8" opacity="0.5"/>
                 <polygon points="-18,6 18,6 23,0 -16,0" fill="#0F172A"/>
                 <rect x="-11" y="-5" width="7" height="5" fill="#F8FAFC"/>
                 <path d="M0,0 Q7,-13 13,0 Q9,-19 0,-12 Z" fill="#EF4444"/>
@@ -613,22 +632,29 @@ HTML_TEMPLATE = """<!doctype html>
     </div>
   </section>
 
-  <!-- ROW 4: 4 CONTINENTAL WIRE DISPATCHES (AFRICA, S. AMERICA, UK, U.S.) -->
+  <!-- ROW 4: 4 CONTINENTAL WIRE DISPATCHES WITH FULL MINI-SCENES -->
   <section class="row-4">
     <div class="card">
       <div class="card-bar" style="background:#0E7490;">
         <span class="num-pill">7</span>
         <span>AFRICA &middot; SECURITY</span>
       </div>
-      <div class="card-body" style="gap: 5px;">
-        <div style="display:flex;align-items:center;gap:7px;">
-          <svg viewBox="0 0 38 38" width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:6px;background:#ECFEFF;border:1px solid #A5F3FC;">
-            <polygon points="10,7 22,7 28,16 23,23 19,32 14,23 8,16" fill="#0E7490"/>
-            <circle cx="24" cy="12" r="4" fill="#DC2626" stroke="#FFF" stroke-width="1.2"/>
+      <div class="card-body" style="gap: 4px; padding: 6px 9px 7px 9px;">
+        <div class="art-box" style="height: 44px;">
+          <svg viewBox="0 0 218 44" width="218" height="44" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#ECFEFF;">
+            <polygon points="16,6 32,6 39,17 33,26 27,39 20,26 12,17" fill="#0E7490"/>
+            <circle cx="29" cy="11" r="4" fill="#DC2626" stroke="#FFF" stroke-width="1.2"/>
+            <circle cx="30" cy="24" r="4" fill="#F97316" stroke="#FFF" stroke-width="1.2"/>
+            <rect x="52" y="7" width="76" height="30" rx="4" fill="#0E7490"/>
+            <text x="90" y="20" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="900">BENGHAZI</text>
+            <text x="90" y="31" text-anchor="middle" fill="#CFFAFE" font-size="8.5" font-weight="800">2 OFFICERS DIE</text>
+            <rect x="134" y="7" width="76" height="30" rx="4" fill="#FFF" stroke="#DC2626" stroke-width="1.5"/>
+            <text x="172" y="20" text-anchor="middle" fill="#B91C1C" font-size="9.5" font-weight="900">E. CONGO</text>
+            <text x="172" y="31" text-anchor="middle" fill="#991B1B" font-size="8.5" font-weight="800">M23 / ADF</text>
           </svg>
-          <div class="hl-xs">BENGHAZI TOLL &amp; DRC CLASHES</div>
         </div>
-        <div class="wire-fact">2 Libyan officers die after ship strike; M23 &amp; ADF clashes flare in E. Congo.</div>
+        <div class="hl-xs">BENGHAZI TOLL &amp; DRC CLASHES</div>
+        <div class="wire-fact">2 Libyan officers die after ship strike; clashes flare in E. Congo.</div>
       </div>
     </div>
 
@@ -637,16 +663,19 @@ HTML_TEMPLATE = """<!doctype html>
         <span class="num-pill">8</span>
         <span>S. AMERICA &middot; DEBT</span>
       </div>
-      <div class="card-body" style="gap: 5px;">
-        <div style="display:flex;align-items:center;gap:7px;">
-          <svg viewBox="0 0 38 38" width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:6px;background:#FDF2F8;border:1px solid #FBCFE8;">
-            <rect x="6" y="22" width="6" height="10" fill="#F472B6"/>
-            <rect x="15" y="15" width="6" height="17" fill="#DB2777"/>
-            <rect x="24" y="6" width="8" height="26" fill="#9D174D"/>
+      <div class="card-body" style="gap: 4px; padding: 6px 9px 7px 9px;">
+        <div class="art-box" style="height: 44px;">
+          <svg viewBox="0 0 218 44" width="218" height="44" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#FDF2F8;">
+            <rect x="12" y="25" width="9" height="13" rx="1" fill="#F472B6"/>
+            <rect x="25" y="18" width="9" height="20" rx="1" fill="#DB2777"/>
+            <rect x="38" y="8" width="11" height="30" rx="1" fill="#9D174D"/>
+            <rect x="60" y="7" width="146" height="30" rx="4" fill="#9D174D"/>
+            <text x="133" y="21" text-anchor="middle" fill="#FFF" font-size="11.5" font-weight="900">$237.5B DEBT</text>
+            <text x="133" y="32" text-anchor="middle" fill="#FCE7F3" font-size="9" font-weight="800">242% OF GDP</text>
           </svg>
-          <div class="hl-xs">VENEZUELA REVEALS $237.5B DEBT</div>
         </div>
-        <div class="wire-fact">Official tally hits <strong>242% of GDP</strong> ahead of major restructuring.</div>
+        <div class="hl-xs">VENEZUELA REVEALS $237.5B DEBT</div>
+        <div class="wire-fact">Official tally hits <strong>242% of GDP</strong> ahead of restructuring.</div>
       </div>
     </div>
 
@@ -655,17 +684,20 @@ HTML_TEMPLATE = """<!doctype html>
         <span class="num-pill">9</span>
         <span>UK &amp; EUROPE &middot; JUSTICE</span>
       </div>
-      <div class="card-body" style="gap: 5px;">
-        <div style="display:flex;align-items:center;gap:7px;">
-          <svg viewBox="0 0 38 38" width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:6px;background:#F1F5F9;border:1px solid #CBD5E1;">
-            <rect x="8" y="6" width="22" height="26" rx="2" fill="#FFF" stroke="#334155" stroke-width="1.8"/>
-            <line x1="12" y1="13" x2="26" y2="13" stroke="#334155" stroke-width="2"/>
-            <line x1="12" y1="19" x2="26" y2="19" stroke="#DC2626" stroke-width="2"/>
-            <line x1="12" y1="25" x2="22" y2="25" stroke="#334155" stroke-width="2"/>
+      <div class="card-body" style="gap: 4px; padding: 6px 9px 7px 9px;">
+        <div class="art-box" style="height: 44px;">
+          <svg viewBox="0 0 218 44" width="218" height="44" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#F1F5F9;">
+            <rect x="14" y="6" width="28" height="32" rx="2" fill="#FFF" stroke="#334155" stroke-width="1.6"/>
+            <line x1="19" y1="14" x2="37" y2="14" stroke="#334155" stroke-width="2"/>
+            <line x1="19" y1="21" x2="37" y2="21" stroke="#DC2626" stroke-width="2"/>
+            <line x1="19" y1="28" x2="32" y2="28" stroke="#334155" stroke-width="2"/>
+            <rect x="54" y="7" width="152" height="30" rx="4" fill="#FFF" stroke="#DC2626" stroke-width="1.6"/>
+            <text x="130" y="20" text-anchor="middle" fill="#334155" font-size="9.5" font-weight="900">FAIRFIELD REVIEW</text>
+            <text x="130" y="31" text-anchor="middle" fill="#DC2626" font-size="9" font-weight="900">INSTITUTIONAL BIAS</text>
           </svg>
-          <div class="hl-xs">MET POLICE STILL 'BIASED': REVIEW</div>
         </div>
-        <div class="wire-fact">Fairfield report finds London force still racist &amp; misogynistic.</div>
+        <div class="hl-xs">MET POLICE STILL 'BIASED': REVIEW</div>
+        <div class="wire-fact">Report finds London force still racist &amp; misogynistic.</div>
       </div>
     </div>
 
@@ -674,16 +706,19 @@ HTML_TEMPLATE = """<!doctype html>
         <span class="num-pill">10</span>
         <span>N. AMERICA &middot; TRADE</span>
       </div>
-      <div class="card-body" style="gap: 5px;">
-        <div style="display:flex;align-items:center;gap:7px;">
-          <svg viewBox="0 0 38 38" width="38" height="38" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:6px;background:#EFF6FF;border:1px solid #BFDBFE;">
-            <rect x="6" y="13" width="26" height="16" rx="2" fill="#1D4ED8"/>
-            <text x="19" y="24" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="900">20%</text>
-            <polygon points="19,5 24,11 14,11" fill="#DC2626"/>
+      <div class="card-body" style="gap: 4px; padding: 6px 9px 7px 9px;">
+        <div class="art-box" style="height: 44px;">
+          <svg viewBox="0 0 218 44" width="218" height="44" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#EFF6FF;">
+            <rect x="12" y="7" width="96" height="30" rx="4" fill="#1D4ED8"/>
+            <text x="60" y="20" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="900">TARIFF PROBE</text>
+            <text x="60" y="31" text-anchor="middle" fill="#DBEAFE" font-size="8.8" font-weight="800">16 PARTNERS</text>
+            <rect x="114" y="7" width="94" height="30" rx="4" fill="#FFF" stroke="#DC2626" stroke-width="1.5"/>
+            <text x="161" y="20" text-anchor="middle" fill="#1E293B" font-size="9.5" font-weight="900">O'HARE STOP</text>
+            <text x="161" y="31" text-anchor="middle" fill="#DC2626" font-size="8.5" font-weight="900">FAA RADAR OUT</text>
           </svg>
-          <div class="hl-xs">U.S. EYES TARIFFS; O'HARE DELAY</div>
         </div>
-        <div class="wire-fact">16-partner overcapacity duties drafted; FAA radar stops Chicago flights.</div>
+        <div class="hl-xs">U.S. EYES TARIFFS; O'HARE DELAY</div>
+        <div class="wire-fact">Overcapacity duties drafted; FAA outage slows Chicago hub.</div>
       </div>
     </div>
   </section>
