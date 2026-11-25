@@ -7,7 +7,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parent.parent
 ASSET_OUT = ROOT / "assets" / "entry.png"
 SCRATCH_DIR = Path(r"C:\Users\82103\.gemini\antigravity\brain\c8bbd2ac-e3a5-415b-8afb-bf347f8e20ad\scratch")
-PREVIEW_300 = SCRATCH_DIR / "preview_300_v13.png"
+PREVIEW_300 = SCRATCH_DIR / "preview_300_v14.png"
 
 
 def proj(lon: float, lat: float) -> tuple[float, float]:
@@ -262,9 +262,9 @@ HTML_TEMPLATE = """<!doctype html>
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    font-size: 17px;
-    line-height: 1.18;
+    gap: 6px;
+    font-size: 16.5px;
+    line-height: 1.2;
     color: #1E293B;
     font-weight: 700;
   }}
@@ -429,9 +429,9 @@ HTML_TEMPLATE = """<!doctype html>
             </svg>
           </div>
           <ul class="facts">
-            <li><strong>First foreign astronaut</strong> reaches Tiangong</li>
-            <li>Pakistan's <strong>M. Zeeshan Ali</strong> + 2 crew</li>
-            <li><strong>08:18 BJT</strong> (00:18 UTC) &middot; Jiuquan</li>
+            <li><strong>First foreign astronaut</strong> on Tiangong</li>
+            <li>Pakistan's <strong>Zeeshan Ali</strong> + 2 crew</li>
+            <li>Jiuquan launch <strong>08:18 BJT</strong> (00:18Z)</li>
           </ul>
         </div>
       </div>
@@ -543,8 +543,8 @@ HTML_TEMPLATE = """<!doctype html>
             </svg>
           </div>
           <ul class="facts">
-            <li><strong>2 oil tankers burn</strong> after hitting mines</li>
-            <li>Saudi downs <strong>4 drones</strong> over Ras Tanura</li>
+            <li><strong>2 tankers catch fire</strong> on mines</li>
+            <li>Saudi downs <strong>4 Ras Tanura drones</strong></li>
             <li><strong>Houthis threaten</strong> Red Sea ports</li>
           </ul>
         </div>
@@ -572,8 +572,8 @@ HTML_TEMPLATE = """<!doctype html>
             <line x1="162" y1="26" x2="216" y2="26" stroke="#92400E" stroke-width="2.6"/>
             <line x1="162" y1="36" x2="212" y2="36" stroke="#CBD5E1" stroke-width="2.2"/>
             <line x1="162" y1="45" x2="204" y2="45" stroke="#CBD5E1" stroke-width="2.2"/>
-            <circle cx="212" cy="68" r="7.5" fill="#DC2626" stroke="#991B1B" stroke-width="1.6"/>
-            <text x="180" y="72" text-anchor="middle" fill="#0F766E" font-size="13.5" font-weight="900">$740M</text>
+            <circle cx="214" cy="68" r="7" fill="#DC2626" stroke="#991B1B" stroke-width="1.5"/>
+            <text x="177" y="72" text-anchor="middle" fill="#0F766E" font-size="13.5" font-weight="900">$740M</text>
             <g transform="translate(234,12)">
               <rect x="0" y="0" width="54" height="72" rx="5" fill="#FFF" stroke="#DC2626" stroke-width="2"/>
               <polygon points="8,38 46,38 42,48 12,48" fill="#475569"/>
@@ -773,18 +773,21 @@ HTML_TEMPLATE = """<!doctype html>
       <div class="card-body" style="gap: 5px; padding: 6px 9px 7px 9px;">
         <div class="art-box" style="height: 90px;">
           <svg viewBox="0 0 218 86" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:100%;background:#EFF6FF;">
-            <!-- Crisp shipping containers with corner ribs clear of centered labels -->
-            <rect x="12" y="14" width="92" height="28" rx="3" fill="#2563EB"/>
-            <line x1="21" y1="18" x2="21" y2="38" stroke="#93C5FD" stroke-width="2"/>
-            <line x1="95" y1="18" x2="95" y2="38" stroke="#93C5FD" stroke-width="2"/>
-            <text x="58" y="32" text-anchor="middle" fill="#FFF" font-size="11.5" font-weight="900">IMPORTS</text>
-            <rect x="12" y="46" width="92" height="28" rx="3" fill="#1E40AF"/>
-            <line x1="21" y1="50" x2="21" y2="70" stroke="#60A5FA" stroke-width="2"/>
-            <line x1="95" y1="50" x2="95" y2="70" stroke="#60A5FA" stroke-width="2"/>
-            <text x="58" y="64" text-anchor="middle" fill="#DBEAFE" font-size="11" font-weight="900">16 NATIONS</text>
-            <rect x="114" y="14" width="94" height="60" rx="6" fill="#DC2626"/>
-            <text x="161" y="34" text-anchor="middle" fill="#FECACA" font-size="11" font-weight="900">SEC. 301</text>
-            <text x="161" y="54" text-anchor="middle" fill="#FFF" font-size="16" font-weight="900">TARIFFS</text>
+            <!-- Clean port crane truss above shipping containers -->
+            <line x1="8" y1="10" x2="106" y2="10" stroke="#1E40AF" stroke-width="2.5"/>
+            <line x1="10" y1="10" x2="10" y2="79" stroke="#64748B" stroke-width="2"/>
+            <line x1="57" y1="10" x2="57" y2="18" stroke="#1E40AF" stroke-width="2.2"/>
+            <rect x="12" y="18" width="90" height="26" rx="3" fill="#2563EB"/>
+            <line x1="21" y1="22" x2="21" y2="40" stroke="#93C5FD" stroke-width="2"/>
+            <line x1="93" y1="22" x2="93" y2="40" stroke="#93C5FD" stroke-width="2"/>
+            <text x="57" y="35" text-anchor="middle" fill="#FFF" font-size="11.5" font-weight="900">IMPORTS</text>
+            <rect x="12" y="48" width="90" height="27" rx="3" fill="#1E40AF"/>
+            <line x1="21" y1="52" x2="21" y2="71" stroke="#60A5FA" stroke-width="2"/>
+            <line x1="93" y1="52" x2="93" y2="71" stroke="#60A5FA" stroke-width="2"/>
+            <text x="57" y="65.5" text-anchor="middle" fill="#DBEAFE" font-size="11" font-weight="900">16 NATIONS</text>
+            <rect x="114" y="12" width="94" height="63" rx="6" fill="#DC2626"/>
+            <text x="161" y="32" text-anchor="middle" fill="#FECACA" font-size="11" font-weight="900">SEC. 301</text>
+            <text x="161" y="53" text-anchor="middle" fill="#FFF" font-size="16" font-weight="900">TARIFFS</text>
             <text x="161" y="68" text-anchor="middle" fill="#FEF2F2" font-size="9.5" font-weight="800">U.S. DRAFT</text>
           </svg>
         </div>
